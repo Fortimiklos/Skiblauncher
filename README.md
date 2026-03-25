@@ -1,3 +1,2 @@
 # Skiblauncher
-A simple Minecraft launcher
-SKibidi
+A simple Minecraft launcher 
