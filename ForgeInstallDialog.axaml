@@ -1,0 +1,19 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Skiblauncher.ForgeInstallDialog"
+        Title="Adathalászat"
+        Width="600" Height="150"
+        WindowStartupLocation="CenterOwner"
+        CanResize="False">
+    <Window.Background>
+        <ImageBrush
+            Source="avares://Skiblauncher/Assets/hatter.png"
+            Stretch="UniformToFill"></ImageBrush>
+    </Window.Background>
+    <Grid RowDefinitions="2*,2*,2*,3*">
+        <TextBlock Grid.Row="0" Background="Black" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">Válassz verziót!</TextBlock>
+        <ComboBox Grid.Row="1" Name="VanillaVersionBox" HorizontalAlignment="Stretch" SelectedIndex="0"></ComboBox>
+        <RadioButton  Grid.Row="2" Content="Forge" HorizontalAlignment="Left" Name="ForgeSelected" GroupName="ForgeType" IsChecked="True"></RadioButton> <RadioButton GroupName="ForgeType" Name="NeoForgeSelected" Grid.Row="2" Content="NeoForge" HorizontalAlignment="Right"></RadioButton>
+        <Button Grid.Row="3" Name="OkButton" Click="OkButton_OnClick" Content="OK" Background="Green" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"></Button>
+    </Grid>
+</Window>

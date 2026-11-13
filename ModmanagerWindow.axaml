@@ -1,0 +1,45 @@
+<ContentPage xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:skiblauncher="clr-namespace:Skiblauncher"
+             x:Class="Skiblauncher.ModManagerWindow"
+             x:Name="root"
+             >
+    <ContentPage.Background>
+        <ImageBrush
+            Source="avares://Skiblauncher/Assets/hatter.png"
+            Stretch="UniformToFill"/>
+    </ContentPage.Background>
+            <Grid ColumnDefinitions="3*,7*"  RowDefinitions="1*,8*,1*">
+                <DockPanel Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="2" Background="Gray" >
+                    <Button Name="ModrinthButton" Content="Modrinth" Background="Black" Click="ModrinthButton_OnClick"></Button>
+                    <Button Name="CurseForgeButton" Content="CurseForge" Background="Black" Click="CurseForgeButton_OnClick"></Button>
+                    <TextBlock Text="CurseForge-on mindig a mod megnyitása után tölts le." VerticalAlignment="Center"></TextBlock>
+                    <Button Name="ModInstall" Content="Modok Telepítése" HorizontalAlignment="Right" Background="Black" Click="ModInstall_OnClick"></Button>
+                    <Button Name="ForgeInstall" Content="Forge Telepítése" HorizontalAlignment="Right" Background="Black" Click="ForgeInstall_OnClick"></Button>
+                    <Button Name="ModListRefresh" Content="Modlista Frissítése" HorizontalAlignment="Right" Background="Black" Click="ModListRefresh_OnClick"></Button>
+                </DockPanel>
+                <ListBox Grid.Row="1" Grid.Column="0"  Background="Gray" Name="ForgeVersions"></ListBox>
+                <ListBox Grid.Row="1" Grid.Column="1" x:Name="ModList"  >
+                <ListBox.ItemTemplate>
+                    <DataTemplate x:DataType="skiblauncher:ModListObjects">
+                        <Grid>
+                        <CheckBox IsChecked="{Binding OnState,Mode=TwoWay}"
+                                  Content="{Binding ModName}" Click="Checkbox_OnClick"></CheckBox>
+                        <Button Name="DeleteMod" Content="Törlés" Click="DeleteMod_OnClick" HorizontalAlignment="Right" ></Button>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+                </ListBox>
+                <Button 
+                    Name="StartForgeButton"
+                    Grid.Row="2" 
+                    Grid.ColumnSpan="2" 
+                    Grid.Column="0" 
+                    Background="Green" 
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Stretch"
+                    Content="Forge Indítása"
+                    HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="StartForgeButton_OnClick"
+                    ></Button>
+            </Grid>
+</ContentPage>

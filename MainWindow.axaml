@@ -1,0 +1,34 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Skiblauncher.MainWindow"
+        Title="Skiblauncher">
+        <NavigationPage x:Name="Navigation">
+                <ContentPage Header="sigma"
+                             NavigationPage.HasNavigationBar="False">
+                        <ContentPage.Background>
+                                <ImageBrush
+                                        Source="avares://Skiblauncher/Assets/hatter.png"
+                                        Stretch="UniformToFill"/>
+                        </ContentPage.Background>
+                        <StackPanel VerticalAlignment="Center" Width="500">
+                                <TextBox Name="user" PlaceholderText="Felhasználónév" Margin="0 0 0 10 " ></TextBox>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                                        <ComboBox SelectionChanged="verziok_SelectionChanged" Name="verziok" Width="380" Margin="0 0 10 0 " VerticalAlignment="Center" ></ComboBox>
+                                        <CheckBox IsCheckedChanged="ToggleButton_OnIsCheckedChanged" Name="snapshotsBox" Content="Snapshotok" IsChecked="False"></CheckBox>
+                                        <CheckBox Name="DownloadedVersions" IsCheckedChanged="DownloadedVersions_OnIsCheckedChanged" Content="Letöltve"></CheckBox>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                        <Button Click="StartButton_OnClick" Content="Start" Name="startButton" HorizontalAlignment="Center" Margin="100,10,100,20" Background="Green" Padding="100 10 100 10"></Button>
+                                        <Button Content="Skin..." Background="Gray"></Button>
+
+                                </StackPanel>
+                                        <ProgressBar Name="ProgressBar" VerticalAlignment="Bottom" Value="0" IsVisible="False" Height="10"></ProgressBar>
+                                <Button Name="viewSwap" Click="ViewSwap_OnClick" Content="Sigma - modnézet"></Button>
+                        </StackPanel>
+                </ContentPage>
+        </NavigationPage>
+</Window>
+        

@@ -1,0 +1,12 @@
+<ContentPage xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Skiblauncher.ModrinthContentPage"
+             x:Name="root">
+    <ContentPage.TopCommandBar>
+            <Button Content="Vissza" Click="Button_OnClick"></Button>
+    </ContentPage.TopCommandBar>
+    <NativeWebView
+        x:Name="Modrinth"
+        Source="https://modrinth.com/discover/mods">
+        </NativeWebView>
+</ContentPage>
